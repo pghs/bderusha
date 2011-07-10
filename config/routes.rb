@@ -7,6 +7,11 @@ Billderusha::Application.routes.draw do
 
   root :to => "pages#home"
 
+  constraints(:host => /www.billderusha.com/) do
+    root :to => redirect("http://billderusha.com")
+    match '/*path', :to => redirect {|params| "http://billderusha.com/#{params[:path]}"}
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
