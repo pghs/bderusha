@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Billderusha</title>
+  <title>Bill DeRusha</title>
+  <%= stylesheet_link_tag 'application' %>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+<div id="shrink">
+  <div class="fix" id="wrap">
+    <div class="fix" id="head">
+      <div id="identity">
+              <h2><a href="http://BillDeRusha.com/" title="Bill DeRusha">Bill DeRusha</a></h2>
+              <h3>funny</h3>
+              <h3>talented</h3>
+              <h3>handsome</h3>
+              <h3>modest</h3>
+      </div>
+      <!--Navigation Bar-->
+      <ul>
+              <li><%= link_to 'About', pages_about_path %></li>
+              <li><%= link_to 'Contact', pages_contact_path %></li>
+      </ul>
+      <p><a href="mailto:bill@billderusha.com">bill@billderusha.com</a></p>
+    </div>
+    <div class="fix content">
+      <%= yield %>
+    </div><!--/.content-->
+  </div><!--/#wrap-->
+</div><!--/#shrink-->
 
-<%= yield %>
+<div class="fix" id="footer">
+<p>&copy; 2011 Bill DeRusha</p>
+</div><!--/#footer-->
 
+<!--Add Analytics to this page-->
 </body>
 </html>
